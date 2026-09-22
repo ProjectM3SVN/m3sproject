@@ -1,0 +1,74 @@
+# M3S Custom Swarm DSL Vocabulary Spec
+# Format: ID TOKEN DESCRIPTION
+
+# 0-3: Special Tokens
+0 <PAD> Padding token
+1 <UNK> Unknown token
+2 <BOS> Beginning of Sequence
+3 <EOS> End of Sequence / Turn delimiter
+
+# Core Protocol Delimiters & Routing
+4 SIT: Situational context marker
+5 ACT: Action protocol marker
+6 THK: Internal reasoning / Chain-of-Thought marker
+7 : Field separator
+8 | Command separator
+9 -> Vector direction / target arrow
+10 , Multi-entity separator
+11 _ Token compound connector
+
+# Entities (Bots, Roles, Targets)
+12 M1 Miner Bot 01
+13 M2 Miner Bot 02
+14 M3 Miner Bot 03
+15 M4 Miner Bot 04
+16 C1 Courier Bot 01
+17 C2 Courier Bot 02
+18 S1 Scout Bot 01
+19 S2 Scout Bot 02
+20 BASE Hive Base / Stronghold
+21 HOSTILE Enemy Player
+22 SQUAD_ALL Entire Swarm
+
+# Environment & Minerals
+23 ORE_DIAMOND Diamond Ore Vein
+24 ANCIENT_DEBRIS Ancient Debris
+25 ORE_IRON Iron Ore Vein
+26 ORE_GOLD Gold Ore Vein
+27 ORE_REDSTONE Redstone Ore
+28 ORE_COAL Coal Deposit
+29 LAVA_HAZARD Lava Lake / Flow
+30 VOID_HAZARD Void Trap / Pit
+31 CHEST_STASH Hidden Stash Chest
+
+# Hostile Threats & Weapons
+32 END_CRYSTAL End Crystal explosive
+33 RESPAWN_ANCHOR Respawn Anchor explosive
+34 NETHERITE_SWORD Netherite Sword melee
+35 BOW_RANGED Ranged sniper attack
+36 TNT_TRAP Placed TNT mechanism
+37 MULTI_ENEMY 2 or more hostiles
+
+# Health & Inventory States
+38 HP_CRITICAL Health <= 6
+39 HP_LOW Health 7-12
+40 HP_FULL Health 18-20
+41 INV_FULL Inventory >= 24 slots filled
+42 INV_EMPTY Inventory clean
+43 TOOL_BROKEN Pickaxe/Sword depleted
+
+# Swarm Tactical Actions
+44 SUPP_MINE Coordinate secondary miner support
+45 SOLO_HARVEST Single miner extraction
+46 DISPATCH_COURIER Call courier to chest location
+47 DROP_CHEST Place covert drop chest
+48 FETCH_CARGO Courier looting transfer chest
+49 STASH_COVERT Hide resources covertly
+50 SELF_ENTOMB Immediate 360-degree obsidian shell
+51 SCATTER_EVAC Full squad disperse opposite direction
+52 DIVERSION_ARROW Long-range distraction shot
+53 TACTICAL_RETREAT Fallback to secure waypoint
+54 FORTIFY_OBSIDIAN Reinforce base with blast-proof blocks
+55 LOCKDOWN_BASE Seal all entrances
+56 SNEAK_CAMOUFLAGE Crouch to suppress nametag
+57 STASIS_SLEEP Enter 20-min deep sleep
