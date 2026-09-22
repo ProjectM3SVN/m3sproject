@@ -1,0 +1,19 @@
+{
+  "name": "msnpc-core",
+  "version": "1.0.0",
+  "description": "Project M3S - Core Agent (MSNPC Phase 1)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --max-old-space-size=64 index.js"
+  },
+  "dependencies": {
+    "minecraft-data": "^3.78.0",
+    "mineflayer": "^4.20.1",
+    "mineflayer-pathfinder": "^2.4.5",
+    "socks-proxy-agent": "^8.0.4",
+    "vec3": "^0.1.10"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

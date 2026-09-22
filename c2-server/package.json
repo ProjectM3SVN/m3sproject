@@ -1,0 +1,13 @@
+{
+  "name": "msmap-c2",
+  "version": "1.0.0",
+  "description": "Project M3S - Real-Time Tactical Map (MSMap) & 3D WebGL C2 Viewer (MSView)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --max-old-space-size=150 server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "ws": "^8.13.0"
+  }
+}
