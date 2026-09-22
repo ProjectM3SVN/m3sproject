@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const { generateHumanName } = require('./lib/nameGenerator');
 
 const envPath = path.resolve(process.cwd(), '.env');
 if (fs.existsSync(envPath)) {
@@ -29,10 +30,11 @@ const proxyList = proxyPoolRaw.split(',').map(p => p.trim()).filter(Boolean);
 const config = {
   connection: {
     host: process.env.HOST || 'play.f3f5.net',
-    port: parseInt(process.env.PORT || '25698', 10), // Port SRV chính thức của f3f5.net
-    username: process.env.USERNAME || `M3S_${Math.floor(1000 + Math.random() * 9000)}`,
+    port: parseInt(process.env.PORT || '25698', 10),
+    // Tự động sinh tên người chơi ngẫu nhiên tự nhiên có tiền tố M3S_ (Ví dụ: M3S_Alex_2004, M3S_SamMine)
+    username: process.env.USERNAME || generateHumanName(),
     authType: process.env.AUTH_TYPE || 'offline',
-    version: process.env.MC_VERSION || '1.20.4', // Hỗ trợ dải 1.7.2 - 1.20.4+
+    version: process.env.MC_VERSION || '1.20.4',
     role: process.env.BOT_ROLE || 'SCOUT',
     instanceIndex: parseInt(process.env.BOT_INSTANCE_INDEX || '0', 10),
   },
