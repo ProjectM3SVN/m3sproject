@@ -28,12 +28,12 @@ const proxyList = proxyPoolRaw.split(',').map(p => p.trim()).filter(Boolean);
 
 const config = {
   connection: {
-    host: process.env.HOST || '127.0.0.1',
-    port: parseInt(process.env.PORT || '25565', 10),
-    username: process.env.USERNAME || `MSNPC_${Math.floor(1000 + Math.random() * 9000)}`,
+    host: process.env.HOST || 'play.f3f5.net',
+    port: parseInt(process.env.PORT || '25698', 10), // Port SRV chính thức của f3f5.net
+    username: process.env.USERNAME || `M3S_${Math.floor(1000 + Math.random() * 9000)}`,
     authType: process.env.AUTH_TYPE || 'offline',
-    version: process.env.MC_VERSION || false,
-    role: process.env.BOT_ROLE || 'MINER',
+    version: process.env.MC_VERSION || '1.20.4', // Hỗ trợ dải 1.7.2 - 1.20.4+
+    role: process.env.BOT_ROLE || 'SCOUT',
     instanceIndex: parseInt(process.env.BOT_INSTANCE_INDEX || '0', 10),
   },
   network: {
@@ -44,14 +44,14 @@ const config = {
     swarmSecret: process.env.SWARM_SECRET,
   },
   authChat: {
-    password: process.env.AUTH_PASSWORD || null,
-    registerIfNew: process.env.REGISTER_IF_NEW === 'true',
-    delayMs: 1500,
+    password: process.env.AUTH_PASSWORD || 'M3sSwarmPass2026',
+    registerIfNew: process.env.REGISTER_IF_NEW !== 'false',
+    delayMs: 2000,
   },
   stealth: {
     brand: process.env.CLIENT_BRAND || 'vanilla',
-    minJitterMs: parseInt(process.env.JITTER_MIN || '45', 10),
-    maxJitterMs: parseInt(process.env.JITTER_MAX || '85', 10),
+    minJitterMs: parseInt(process.env.JITTER_MIN || '55', 10),
+    maxJitterMs: parseInt(process.env.JITTER_MAX || '95', 10),
     aimStepDurationMs: 25,
     noiseDegree: 0.15,
   },
